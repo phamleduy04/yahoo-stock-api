@@ -1,0 +1,15 @@
+{
+    "delimiters": {
+        "thousands": ",",
+        "decimal": "."
+    },
+    "abbreviations": {
+        "thousand": "K",
+        "million": "M",
+        "billion": "B",
+        "trillion": "T"
+    },
+    "currency": {
+        "symbol": "$"
+    }
+}
