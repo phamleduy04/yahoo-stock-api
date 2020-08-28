@@ -38,11 +38,7 @@ module.exports = {
             if (res.request._redirectable._redirectCount !== 0) throw new Error('Yahoo Finance is redirected, maybe your symbol is not found!');
             const $ = cheerio.load(res.data);
             const currency = $('#Col1-1-HistoricalDataTable-Proxy > section > div > div > span > span').text().replace('Currency in', '').trim();
-            return {
-                error: false,
-                currency: currency,
-                data: JSON.parse(res.data.split('HistoricalPriceStore":{"prices":')[1].split(",\"isPending")[0])
-            }
+            return handleResponse(JSON.parse(res.data.split('HistoricalPriceStore":{"prices":')[1].split(",\"isPending")[0]), currency);
         }
         catch(err) {
             return handleError(err);
