@@ -13,6 +13,7 @@
 [![David](https://img.shields.io/david/phamleduy04/yahoo-stock-api?style=for-the-badge)](https://david-dm.org/phamleduy04/yahoo-stock-api)
 ![npm bundle size](https://img.shields.io/bundlephobia/minzip/yahoo-stock-api?style=for-the-badge)
 ![Snyk Vulnerabilities for npm package](https://img.shields.io/snyk/vulnerabilities/npm/yahoo-stock-api?style=for-the-badge)
+![[![Visits Badge](https://badges.pufler.dev/visits/phamleduy04/yahoo-stock-api)](https://badges.pufler.dev)
 ## Installaion
 `npm i yahoo-stock-api`
 ## API
@@ -137,6 +138,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://github.com/phamleduy04"><img src="https://avatars2.githubusercontent.com/u/32657584?v=4" width="100px;" alt=""/><br /><sub><b>Duy Pham Le</b></sub></a><br /><a href="https://github.com/phamleduy04/yahoo-stock-api/commits?author=phamleduy04" title="Code">💻</a></td>
+    <td align="center"><a href="http://altitudequest.com"><img src="https://avatars3.githubusercontent.com/u/18537842?v=4" width="100px;" alt=""/><br /><sub><b>Rajat</b></sub></a><br /><a href="#ideas-rajataudichya" title="Ideas, Planning, & Feedback">🤔</a></td>
   </tr>
 </table>
 
