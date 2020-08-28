@@ -52,7 +52,6 @@ module.exports = {
             const $ = cheerio.load(res.data);
             let currency = $('#quote-header-info > div.Mt\\(15px\\) > div > div > span').text()
             currency = currency ? currency.split(' ').pop() : undefined;
-            //document.querySelector("#quote-header-info > div.Mt\\(15px\\) > div.D\\(ib\\).Mt\\(-5px\\).Mend\\(20px\\).Maw\\(56\\%\\)--tab768.Maw\\(52\\%\\).Ov\\(h\\).smartphone_Maw\\(85\\%\\).smartphone_Mend\\(0px\\) > div.C\\(\\$tertiaryColor\\).Fz\\(12px\\) > span")
             const col1 = $('#quote-summary > div.Pend\\(12px\\) > table > tbody').map(mapRows).get()[0];
             const col2 = $('#quote-summary > div.Pstart\\(12px\\) > table > tbody').map(mapRows).get()[0];
             return handleResponse({ updated: Date.now(), ...col1, ...col2 }, currency);
