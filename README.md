@@ -8,11 +8,7 @@
 ![GitHub issues](https://img.shields.io/github/issues-raw/phamleduy04/yahoo-stock-api?style=for-the-badge)
 ![GitHub](https://img.shields.io/github/license/phamleduy04/yahoo-stock-api?style=for-the-badge)
 ## Installaion
-Not yet ;)
-## Test
-- Clone this Repo (git clone https://github.com/phamleduy04/yahoo-stock-api)
-- Open Terminal (Command Line) in the folder.
-- npm test
+`npm i yahoo-stock-api`
 ## API
 **Everything in this API will return Promise so remember to use** `await`
 
@@ -117,6 +113,12 @@ main();
   }
 }
 ```
+
+## Test
+- Clone this Repo (git clone https://github.com/phamleduy04/yahoo-stock-api)
+- Open Terminal (Command Line) in the folder.
+- npm test
+
 
 ## Contributors ✨
 
