@@ -1,0 +1,14 @@
+{
+  "projectName": "yahoo-stock-api",
+  "projectOwner": "Duy Pham",
+  "repoType": "github",
+  "repoHost": "y",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "commitConvention": "none",
+  "contributors": [],
+  "contributorsPerLine": 7
+}
