@@ -19,13 +19,14 @@
 **Everything in this API will return Promise so remember to use** `await`
 
 `getHistoricalPrices:  async  function(startDate,  endDate,  symbol,  frequency)`
-startDate: Object (datetime)
-endDate: Object (datetime)
-symbol: String (stock symbol)
-frequency: String ('1d', '1wk' or '1mo' only)
-- 1d: 1day
-- 1wk: 1 week
-- 1mo: 1 month
+
+- startDate: Object (datetime)
+- endDate: Object (datetime)
+- symbol: String (stock symbol)
+- frequency: String ('1d', '1wk' or '1mo' only)
+  - 1d: 1day
+  - 1wk: 1 week
+  - 1mo: 1 month
 
 Return promise, example: 
 ```js
@@ -83,7 +84,7 @@ main();
 ```
 
 `getSymbol(symbol)`
-symbol: String (stock symbol)
+- symbol: String (stock symbol)
 
 Return promise, example: 
 ```js
