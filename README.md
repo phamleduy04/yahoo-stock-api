@@ -7,6 +7,11 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/phamleduy04/yahoo-stock-api?style=for-the-badge)
 ![GitHub issues](https://img.shields.io/github/issues-raw/phamleduy04/yahoo-stock-api?style=for-the-badge)
 ![GitHub](https://img.shields.io/github/license/phamleduy04/yahoo-stock-api?style=for-the-badge)
+![Travis (.org)](https://img.shields.io/travis/phamleduy04/yahoo-stock-api?label=travis-ci&logo=travis&style=for-the-badge)
+![Node.js CI](https://github.com/phamleduy04/yahoo-stock-api/workflows/Node.js%20CI/badge.svg)
+![Code quality](https://img.shields.io/scrutinizer/quality/g/phamleduy04/yahoo-stock-api?style=for-the-badge)
+[![David](https://img.shields.io/david/phamleduy04/yahoo-stock-api?style=for-the-badge)](https://david-dm.org/phamleduy04/yahoo-stock-api)
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/yahoo-stock-api?style=for-the-badge)
 ## Installaion
 `npm i yahoo-stock-api`
 ## API
@@ -138,3 +143,6 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fphamleduy04%2Fyahoo-stock-api.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fphamleduy04%2Fyahoo-stock-api?ref=badge_large)
