@@ -1,0 +1,119 @@
+# yahoo-stock-api
+💰 NPM package to get stock and historical price from finance.yahoo.com 
+
+
+![GitHub top language](https://img.shields.io/github/languages/top/phamleduy04/yahoo-stock-api?style=for-the-badge)
+![GitHub package.json version](https://img.shields.io/github/package-json/v/phamleduy04/yahoo-stock-api?style=for-the-badge)
+![GitHub last commit](https://img.shields.io/github/last-commit/phamleduy04/yahoo-stock-api?style=for-the-badge)
+![GitHub issues](https://img.shields.io/github/issues-raw/phamleduy04/yahoo-stock-api?style=for-the-badge)
+![GitHub](https://img.shields.io/github/license/phamleduy04/yahoo-stock-api?style=for-the-badge)
+## Installaion
+Not yet ;)
+## Test
+- Clone this Repo (git clone https://github.com/phamleduy04/yahoo-stock-api)
+- Open Terminal (Command Line) in the folder.
+- npm test
+## API
+**Everything in this API will return Promise so remember to use** `await`
+
+`getHistoricalPrices:  async  function(startDate,  endDate,  symbol,  frequency)`
+startDate: Object (datetime)
+endDate: Object (datetime)
+symbol: String (stock symbol)
+frequency: String ('1d', '1wk' or '1mo' only)
+- 1d: 1day
+- 1wk: 1 week
+- 1mo: 1 month
+
+Return promise, example: 
+```js
+const yahooStockAPI  = require('yahoo-stock-api');
+async function main()  {
+	const startDate = new Date('08/21/2020');
+	const endDate = new Date('08/26/2020');
+	console.log(await yahooStockAPI.getHistoricalPrices(startDate, endDate, 'AAPL', '1d'));
+}
+main();
+```
+```
+{
+  error: false,
+  currency: 'USD',
+  data: [
+    {
+      date: 1598448600,
+      open: 504.7200012207031,
+      high: 507.9700012207031,
+      low: 500.3299865722656,
+      close: 506.0899963378906,
+      volume: 40617600,
+      adjclose: 506.0899963378906
+    },
+    {
+      date: 1598362200,
+      open: 498.7900085449219,
+      high: 500.7200012207031,
+      low: 492.2099914550781,
+      close: 499.29998779296875,
+      volume: 52873900,
+      adjclose: 499.29998779296875
+    },
+    {
+      date: 1598275800,
+      open: 514.7899780273438,
+      high: 515.1400146484375,
+      low: 495.75,
+      close: 503.42999267578125,
+      volume: 86484400,
+      adjclose: 503.42999267578125
+    },
+    {
+      date: 1598016600,
+      open: 477.04998779296875,
+      high: 499.4700012207031,
+      low: 477,
+      close: 497.4800109863281,
+      volume: 84513700,
+      adjclose: 497.4800109863281
+    }
+  ]
+}
+```
+
+`getSymbol(symbol)`
+symbol: String (stock symbol)
+
+Return promise, example: 
+```js
+const yahooStockAPI  = require('yahoo-stock-api');
+async function main()  {
+	console.log(await  yahooStockAPI.getSymbol('AAPL'));
+}
+main();
+```
+
+```
+{
+  error: false,
+  currency: 'USD',
+  response: {
+    updated: 1598573260808,
+    previousClose: 506.09, 
+    open: 508.57,
+    bid: '500.53 x 900',
+    ask: '500.90 x 800',
+    dayRange: '495.33 - 509.94',
+    fiftyTwoWeekRange: '204.22 - 515.14',
+    volume: 38255269,
+    avgVolume: 39094272,
+    marketCap: 2138000000000,
+    beta: 1.23,
+    peRatio: 37.92,
+    eps: 13.19,
+    earningsDate: 'Oct 28, 2020 - Nov 02, 2020',
+    forwardDividendYield: '3.28 (0.65%)',
+    exDividendDate: 'Aug 07, 2020',
+    oneYearTargetEst: 430.06
+  }
+}
+```
