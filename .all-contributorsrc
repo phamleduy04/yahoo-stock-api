@@ -1,14 +1,25 @@
 {
   "projectName": "yahoo-stock-api",
-  "projectOwner": "Duy Pham",
+  "projectOwner": "phamleduy04",
   "repoType": "github",
-  "repoHost": "y",
+  "repoHost": "https://github.com",
   "files": [
     "README.md"
   ],
   "imageSize": 100,
   "commit": true,
   "commitConvention": "none",
-  "contributors": [],
-  "contributorsPerLine": 7
+  "contributors": [
+    {
+      "login": "phamleduy04",
+      "name": "Duy Pham Le",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/32657584?v=4",
+      "profile": "https://github.com/phamleduy04",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "skipCi": true
 }
