@@ -12,6 +12,7 @@
 ![Code quality](https://img.shields.io/scrutinizer/quality/g/phamleduy04/yahoo-stock-api?style=for-the-badge)
 [![David](https://img.shields.io/david/phamleduy04/yahoo-stock-api?style=for-the-badge)](https://david-dm.org/phamleduy04/yahoo-stock-api)
 ![npm bundle size](https://img.shields.io/bundlephobia/minzip/yahoo-stock-api?style=for-the-badge)
+![Snyk Vulnerabilities for npm package](https://img.shields.io/snyk/vulnerabilities/npm/yahoo-stock-api?style=for-the-badge)
 ## Installaion
 `npm i yahoo-stock-api`
 ## API
