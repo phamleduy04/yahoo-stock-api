@@ -8,11 +8,7 @@
 ![GitHub issues](https://img.shields.io/github/issues-raw/phamleduy04/yahoo-stock-api?style=for-the-badge)
 ![GitHub](https://img.shields.io/github/license/phamleduy04/yahoo-stock-api?style=for-the-badge)
 ## Installaion
-Not yet ;)
-## Test
-- Clone this Repo (git clone https://github.com/phamleduy04/yahoo-stock-api)
-- Open Terminal (Command Line) in the folder.
-- npm test
+`npm i yahoo-stock-api`
 ## API
 **Everything in this API will return Promise so remember to use** `await`
 
@@ -118,6 +114,12 @@ main();
 }
 ```
 
+## Test
+- Clone this Repo (git clone https://github.com/phamleduy04/yahoo-stock-api)
+- Open Terminal (Command Line) in the folder.
+- npm test
+
+
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
@@ -125,7 +127,13 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
-<!-- markdownlint-restore -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/phamleduy04"><img src="https://avatars2.githubusercontent.com/u/32657584?v=4" width="100px;" alt=""/><br /><sub><b>Duy Pham Le</b></sub></a><br /><a href="https://github.com/phamleduy04/yahoo-stock-api/commits?author=phamleduy04" title="Code">💻</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
