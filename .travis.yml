@@ -1,0 +1,8 @@
+langugage: node_js
+node_js: 
+  - "stable"
+cache: npm
+install:
+  - npm install
+script:
+  - npm run test
