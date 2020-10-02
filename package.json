@@ -14,7 +14,8 @@
     "eslint": "^7.7.0"
   },
   "scripts": {
-    "test": "node test/test.js"
+    "test": "node test/test.js",
+    "lint": "eslint '**/*.js'"
   },
   "repository": {
     "type": "git",
