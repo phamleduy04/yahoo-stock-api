@@ -15,7 +15,7 @@
 ![Snyk Vulnerabilities for npm package](https://img.shields.io/snyk/vulnerabilities/npm/yahoo-stock-api?style=for-the-badge)
 ![[![Visits Badge](https://badges.pufler.dev/visits/phamleduy04/yahoo-stock-api)](https://badges.pufler.dev)
 ## Installaion
-`npm i yahoo-stock-api`
+`npm i yahoo-stock-api` or `yarn add yahoo-stock-api` if you use yarn.
 ## API
 **Everything in this API will return Promise so remember to use** `await`
 
