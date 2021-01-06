@@ -137,13 +137,15 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/phamleduy04"><img src="https://avatars2.githubusercontent.com/u/32657584?v=4" width="100px;" alt=""/><br /><sub><b>Duy Pham Le</b></sub></a><br /><a href="https://github.com/phamleduy04/yahoo-stock-api/commits?author=phamleduy04" title="Code">💻</a></td>
-    <td align="center"><a href="http://altitudequest.com"><img src="https://avatars3.githubusercontent.com/u/18537842?v=4" width="100px;" alt=""/><br /><sub><b>Rajat</b></sub></a><br /><a href="#ideas-rajataudichya" title="Ideas, Planning, & Feedback">🤔</a></td>
+    <td align="center"><a href="https://github.com/phamleduy04"><img src="https://avatars2.githubusercontent.com/u/32657584?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Duy Pham Le</b></sub></a><br /><a href="https://github.com/phamleduy04/yahoo-stock-api/commits?author=phamleduy04" title="Code">💻</a></td>
+    <td align="center"><a href="http://altitudequest.com"><img src="https://avatars3.githubusercontent.com/u/18537842?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Rajat</b></sub></a><br /><a href="#ideas-rajataudichya" title="Ideas, Planning, & Feedback">🤔</a></td>
+    <td align="center"><a href="https://github.com/twhtanghk"><img src="https://avatars1.githubusercontent.com/u/1798269?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Tommy Tang</b></sub></a><br /><a href="https://github.com/phamleduy04/yahoo-stock-api/commits?author=twhtanghk" title="Code">💻</a> <a href="https://github.com/phamleduy04/yahoo-stock-api/issues?q=author%3Atwhtanghk" title="Bug reports">🐛</a></td>
   </tr>
 </table>
 
-<!-- markdownlint-enable -->
+<!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
