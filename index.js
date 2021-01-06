@@ -16,7 +16,7 @@ const mapRows = (_, row) => {
     const json = {};
     const skipCheckColumn = ['earningsDate', 'exDividendDate', 'bid', 'ask'];
     cheerio(row).children('tr').each((_, cell) => {
-        cell = cheerio.load(cell);
+        cell = cheerio.load(cell.childNodes);
         const column = cell('td:nth-child(1)').text().replace('1y', 'oneYear').replace('52', 'fiftyTwo').replace(/\([^)]*\)|'s|&/g, '');
         let value = cell('td:nth-child(2)').text() !== 'N/A' ? cell('td:nth-child(2)').text() : null;
         json[camelCase(column)] = numeral(value).value() == null || isNaN(numeral(value).value()) || skipCheckColumn.includes(camelCase(column)) ? value : numeral(value).value();
