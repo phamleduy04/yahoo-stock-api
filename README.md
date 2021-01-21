@@ -125,6 +125,7 @@ main();
 ## Test
 - Clone this Repo (git clone https://github.com/phamleduy04/yahoo-stock-api)
 - Open Terminal (Command Line) in the folder.
+- npm i
 - npm test
 
 
