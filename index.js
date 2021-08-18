@@ -1,5 +1,5 @@
 const axios = require('axios');
-const cheerio = require('cheerio');
+const cheerio = require('cheerio').default;
 const { dateToUnix, handleError, handleResponse } = require('./util');
 const frequencyList = ['1d', '1wk', '1mo'];
 var numeral = require('numeral');
