@@ -4,7 +4,7 @@
   "description": "Simple API to get stock price from finance.yahoo.com",
   "main": "index.js",
   "dependencies": {
-    "axios": "^0.21.4",
+    "axios": "^0.22.0",
     "camelcase": "^6.0.0",
     "cheerio": "^1.0.0-rc.3",
     "numeral": "^2.0.6"
