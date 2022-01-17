@@ -30,5 +30,8 @@
   "bugs": {
     "url": "https://github.com/phamleduy04/yahoo-stock-api/issues"
   },
-  "homepage": "https://github.com/phamleduy04/yahoo-stock-api#readme"
+  "homepage": "https://github.com/phamleduy04/yahoo-stock-api#readme",
+  "engines": {
+    "node": ">=12.18"
+  }
 }
