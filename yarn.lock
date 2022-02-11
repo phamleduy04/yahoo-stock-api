@@ -964,9 +964,9 @@ type-fest@^0.21.3:
   integrity sha512-t0rzBq87m3fVcduHDUFhKmyyX+9eo6WQjZvf51Ea/M0Q7+T374Jp1aUiyUl0GKxp8M/OETVHSDvmkyPgvX+X2w==
 
 undici@^4.12.2:
-  version "4.13.0"
-  resolved "https://registry.yarnpkg.com/undici/-/undici-4.13.0.tgz#7d10fe150c3241a6b3b0eba80eff59c9fb40f359"
-  integrity sha512-8lk8S/f2V0VUNGf2scU2b+KI2JSzEQLdCyRNRF3XmHu+5jectlSDaPSBCXAHFaUlt1rzngzOBVDgJS9/Gue/KA==
+  version "4.14.0"
+  resolved "https://registry.yarnpkg.com/undici/-/undici-4.14.0.tgz#49d091d723087d444f3d782a23f9b66f11735e80"
+  integrity sha512-G3pVFFh7SB6icKux/brM+e/dzgBJDGQ8rn+cbyg8fwrbpk0C7pG4rzJSTqA7TGk95EMBLAfTg3mKJ2q3sLJyeQ==
 
 uri-js@^4.2.2:
   version "4.4.1"
