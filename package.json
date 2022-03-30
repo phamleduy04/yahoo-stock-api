@@ -7,10 +7,10 @@
     "camelcase": "6.3.0",
     "cheerio": "^1.0.0-rc.10",
     "numeral": "^2.0.6",
-    "undici": "^4.14.1"
+    "undici": "^5.0.0"
   },
   "devDependencies": {
-    "eslint": "8.11.0"
+    "eslint": "8.12.0"
   },
   "scripts": {
     "test": "node test/test.js",
