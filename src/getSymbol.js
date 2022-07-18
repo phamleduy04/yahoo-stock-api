@@ -2,9 +2,9 @@ const { request } = require('undici');
 const baseURL = 'https://finance.yahoo.com/quote/';
 const camelCase = require('camelcase');
 const cheerio = require('cheerio').default;
-const { handleError, handleResponse } = require('../../util');
+const { handleError, handleResponse } = require('../util');
 const numeral = require('numeral');
-numeral.register('locale', 'api', require('../../numeralConfig.json'));
+numeral.register('locale', 'api', require('../numeralConfig.json'));
 numeral.locale('api');
 
 const mapRows = (_, row) => {

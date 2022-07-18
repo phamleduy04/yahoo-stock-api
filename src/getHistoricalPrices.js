@@ -1,4 +1,4 @@
-const { dateToUnix, handleError, handleResponse } = require('../../util');
+const { dateToUnix, handleError, handleResponse } = require('../util');
 const { request } = require('undici');
 const baseURL = 'https://finance.yahoo.com/quote/';
 const frequencyList = ['1d', '1wk', '1mo'];

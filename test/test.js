@@ -1,4 +1,4 @@
-const yahooStockAPI = require('../index.js');
+const yahooStockAPI = require('../index');
 ( async() => {
     console.log(await yahooStockAPI.getSymbol('AAPL'));
     const startDate = new Date('08/21/2020');
