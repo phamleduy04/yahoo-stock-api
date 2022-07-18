@@ -10,7 +10,7 @@ interface Stock {
         bid: string;
         ask: string;
         dayRange: string;
-        fifyTwoWeekRange: string;
+        fiftyTwoWeekRange: string;
         volume: number;
         avgVolume: number;
         marketCap: number;
