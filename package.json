@@ -1,16 +1,17 @@
 {
   "name": "yahoo-stock-api",
-  "version": "1.1.5",
+  "version": "1.1.7",
   "description": "Simple API to get stock price from finance.yahoo.com",
   "main": "index.js",
+  "types": "src/index.d.ts",
   "dependencies": {
     "camelcase": "6.3.0",
     "cheerio": "^1.0.0-rc.12",
     "numeral": "^2.0.6",
-    "undici": "^5.6.0"
+    "undici": "^5.8.0"
   },
   "devDependencies": {
-    "eslint": "8.19.0"
+    "eslint": "8.20.0"
   },
   "scripts": {
     "test": "node test/test.js",

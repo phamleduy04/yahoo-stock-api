@@ -1,1 +1,4 @@
-module.exports = require('./src')
+module.exports = {
+    getHistoricalPrices: require('./src/getHistoricalPrices'),
+    getSymbol: require('./src/getSymbol'),
+}
