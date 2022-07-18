@@ -22,8 +22,9 @@ const mapRows = (_, row) => {
 const getSymbol = async (symbol) => {
     try {
         if (!symbol || typeof symbol !== 'string') throw new Error('Symbol not provided or Symbol is not a string!');
-        const { body } = await request(baseURL + `${symbol}/`);
-        const $ = cheerio.load(await body.text());
+        const response = await request(baseURL + `${symbol}/`);
+        const $ = cheerio.load(await response.body.text());
+        if ($('title').text() === "Requested symbol wasn't found") return { error: true, message: 'Symbol not found!', response: null };
         let currency = $('#quote-header-info > div.Mt\\(15px\\) > div > div > span').text()
         currency = currency ? currency.split(' ').pop() : undefined;
         const col1 = $('#quote-summary > div.Pend\\(12px\\) > table > tbody').map(mapRows).get()[0];

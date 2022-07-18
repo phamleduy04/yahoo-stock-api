@@ -3,6 +3,7 @@ export async function getSymbol(symbol: string): Promise<Stock>;
 interface Stock {
     error: boolean;
     currency: string;
+    message?: string;
     response: {
         updated: number;
         previousClose: number;
