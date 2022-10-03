@@ -2,3 +2,5 @@
 package-lock.json
 test.js
 .vscode
+dist/*
+*.tgz
