@@ -10,37 +10,42 @@
 ![Travis (.org)](https://img.shields.io/travis/phamleduy04/yahoo-stock-api?label=travis-ci&logo=travis&style=for-the-badge)
 ![Node.js CI](https://github.com/phamleduy04/yahoo-stock-api/workflows/Node.js%20CI/badge.svg)
 ![Code quality](https://img.shields.io/scrutinizer/quality/g/phamleduy04/yahoo-stock-api?style=for-the-badge)
-[![David](https://img.shields.io/david/phamleduy04/yahoo-stock-api?style=for-the-badge)](https://david-dm.org/phamleduy04/yahoo-stock-api)
 ![npm bundle size](https://img.shields.io/bundlephobia/minzip/yahoo-stock-api?style=for-the-badge)
 ![Snyk Vulnerabilities for npm package](https://img.shields.io/snyk/vulnerabilities/npm/yahoo-stock-api?style=for-the-badge)
 ![[![Visits Badge](https://badges.pufler.dev/visits/phamleduy04/yahoo-stock-api)](https://badges.pufler.dev)
 ## Installaion
 `npm i yahoo-stock-api` or `yarn add yahoo-stock-api` if you use yarn.
 ## API
-**Everything in this API will return Promise so remember to use** `await`
+**Everything in this API will return Promise so remember to use** `async/await` **or** `callback`
 
-`getHistoricalPrices:  async  function(startDate,  endDate,  symbol,  frequency)`
+`getHistoricalPrices:  async  function({ startDate,  endDate,  symbol,  frequency })`
 
-- startDate: Object (datetime)
-- endDate: Object (datetime)
+- startDate: Date
+- endDate: Date
 - symbol: String (stock symbol)
 - frequency: String ('1d', '1wk' or '1mo' only)
   - 1d: 1day
   - 1wk: 1 week
   - 1mo: 1 month
 
-Return promise, example: 
-```js
-const yahooStockAPI  = require('yahoo-stock-api');
-async function main()  {
-	const startDate = new Date('08/21/2020');
-	const endDate = new Date('08/26/2020');
-	console.log(await yahooStockAPI.getHistoricalPrices(startDate, endDate, 'AAPL', '1d'));
-}
-main();
-```
-```
-{
+Return Promise
+
+<details>
+  <summary>Example</summary>
+  
+  ### Code
+  ```js
+  const yahooStockAPI = require('yahoo-stock-api').default;
+
+const yahoo = new yahooStockAPI();
+
+const startDate = new Date('08/21/2020');
+const endDate = new Date('08/26/2020');
+yahoo.getHistoricalPrices({ startDate, endDate, symbol: 'AAPL', frequency: '1d' }).then(console.log);
+  ```
+  ### Response
+  ```js
+  {
   error: false,
   currency: 'USD',
   data: [
@@ -82,45 +87,55 @@ main();
     }
   ]
 }
-```
+  ```
+  
+</details>
 
-`getSymbol(symbol)`
+`getSymbol({ symbol })`
 - symbol: String (stock symbol)
 
-Return promise, example: 
-```js
-const yahooStockAPI  = require('yahoo-stock-api');
-async function main()  {
-	console.log(await  yahooStockAPI.getSymbol('AAPL'));
-}
-main();
-```
+Return Promise
 
-```
+<details>
+  <summary>Example</summary>
+  
+  ### Code
+  ```js
+  const yahooStockAPI = require('yahoo-stock-api').default;
+
+const yahoo = new yahooStockAPI();
+
+yahoo.getSymbol({ symbol: 'AAPL' }).then(console.log);
+  ```
+  
+  ### Response
+  ```js
 {
   error: false,
   currency: 'USD',
   response: {
-    updated: 1598573260808,
-    previousClose: 506.09, 
-    open: 508.57,
-    bid: '500.53 x 900',
-    ask: '500.90 x 800',
-    dayRange: '495.33 - 509.94',
-    fiftyTwoWeekRange: '204.22 - 515.14',
-    volume: 38255269,
-    avgVolume: 39094272,
-    marketCap: 2138000000000,
-    beta: 1.23,
-    peRatio: 37.92,
-    eps: 13.19,
-    earningsDate: 'Oct 28, 2020 - Nov 02, 2020',
-    forwardDividendYield: '3.28 (0.65%)',
-    exDividendDate: 'Aug 07, 2020',
-    oneYearTargetEst: 430.06
-  }
-}
+    updated: 1664829357507,
+    previousClose: 138.2,
+    open: 138.21,
+    bid: { value: 142.42, shares: 1100 },
+    ask: { value: 142.44, shares: 1300 },
+    dayRange: { low: 137.68, high: 143.07 },
+    fiftyTwoWeekRange: { low: 129.04, high: 182.94 },
+    volume: 113578851,
+    avgVolume: 78897638,
+    marketCap: 2289000000000,
+    beta: 1.23, 
+    peRatio: 23.55,
+    eps: 6.05,
+    earningsDate: { start: 1666760400, end: 1667192400 },
+    forwardDividend: 0.92,
+    forwardYield: 0.67,
+    exDividendDate: 1659675600,
+    oneYearTargetEst: 183.5
+    }
+ }
 ```
+</details>
 
 ## Test
 - Clone this Repo (git clone https://github.com/phamleduy04/yahoo-stock-api)
