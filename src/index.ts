@@ -77,7 +77,7 @@ class YahooStockAPI {
     private handleError(error: unknown) {
         return {
             error: true,
-            message: error instanceof Error ? error?.message : error,
+            message: error instanceof Error ? error.message : error,
         };
     }
     private handleResponse(response: HistoricalPricesResponse[] | getSymbolResponse, currency: string | undefined): APIresponse {
