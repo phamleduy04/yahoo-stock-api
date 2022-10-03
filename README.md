@@ -1,6 +1,9 @@
 # yahoo-stock-api
 💰 NPM package to get stock and historical price from finance.yahoo.com 
 
+# ⚠️ Breaking changes ⚠️
+## v2.0.0 of this package have breaking changes and can affect your code, please review it and change according to the documentation below!
+
 
 ![GitHub top language](https://img.shields.io/github/languages/top/phamleduy04/yahoo-stock-api?style=for-the-badge)
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/phamleduy04/yahoo-stock-api?style=for-the-badge)
