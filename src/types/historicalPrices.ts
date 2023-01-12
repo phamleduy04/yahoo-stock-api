@@ -12,5 +12,5 @@ export type HistoricalPricesResponse = {
     low: number,
     close: number,
     volume: number,
-    adjclose: number,
+    adjClose: number,
 }

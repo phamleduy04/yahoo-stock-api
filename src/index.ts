@@ -12,7 +12,7 @@ class YahooStockAPI {
     private frequencyList = ['1d', '1wk', '1mo'];
     private requestPool = new Pool('https://finance.yahoo.com');
 
-    public async getHistoricalPrices({ startDate, endDate, symbol, frequency }: HistoricalPricesOptions) {
+    public async getHistoricalPrices({ startDate, endDate, symbol, frequency }: HistoricalPricesOptions): Promise<APIresponse> {
         try {
             if (!startDate || Object.prototype.toString.call(startDate) !== '[object Date]') throw new Error('startDate not provided or not a "Date" type!');
             if (!endDate || Object.prototype.toString.call(startDate) !== '[object Date]') throw new Error('endDate not provided or not a "Date" type!');
@@ -22,42 +22,64 @@ class YahooStockAPI {
             // pluis 1 day
             const period2 = dateToUnix(endDate) + 86400;
             const request = await this.requestPool.request({
-                path: `/quote/${symbol}/history?period1=${period1}&period2=${period2}&interval=${frequency}&filter=history&frequency=${frequency}`,
                 method: 'GET',
+                path: `/quote/${symbol}/history?period1=${period1}&period2=${period2}&interval=${frequency}&filter=history&frequency=${frequency}&includeAdjustedClose=true`,
             });
             const responseBody = await request.body.text();
             const $ = cheerio.load(responseBody);
             if ($('title').text() == 'Requested symbol wasn\'t found') throw new Error('Symbol not found!');
-            const currency = $('#Col1-1-HistoricalDataTable-Proxy > section > div > div > span > span').text().replace('Currency in', '').trim();
-            return this.handleResponse(JSON.parse(responseBody.split('HistoricalPriceStore":{"prices":')[1].split(",\"isPending")[0]), currency);
+            let currency: string | undefined = $('#quote-header-info > div:nth-child(2) > div > div > span').text();
+            currency = currency ? currency.split('.')[1].replace('Currency in', '').trim() : undefined;
+            const response = $('#Col1-1-HistoricalDataTable-Proxy > section > div:nth-child(2) > table > tbody > tr').map(this.getHistoricalPricesMapRows).get();
+            return {
+                error: false,
+                currency: currency || undefined,
+                response,
+            };
         }
         catch(err) {
             return this.handleError(err);
         }
     }
 
-    public async getSymbol({ symbol }: { symbol: string }) {
+    public async getSymbol({ symbol }: { symbol: string }): Promise<APIresponse> {
         try {
             if (!symbol || typeof symbol !== 'string') throw new Error('Symbol not provided or Symbol is not a string!');
             const request = await this.requestPool.request({
-                path: `/quote/${symbol}/`,
                 method: 'GET',
+                path: `/quote/${symbol}/`,
             });
             const responseBody = await request.body.text();
             const $ = cheerio.load(responseBody);
-            let currency: string | undefined = $('#quote-header-info > div.Mt\\(15px\\) > div > div > span').text();
-            currency = currency ? currency.split(' ').pop() : undefined;
+            let currency: string | undefined = $('#quote-header-info > div:nth-child(2) > div > div > span').text();
+            currency = currency ? currency.split('.')[1].replace('Currency in', '').trim() : undefined;
             // @ts-ignore
             const col1:col1 = $('#quote-summary > div.Pend\\(12px\\) > table > tbody').map(this.getSymbolMapRows).get()[0];
             // @ts-ignore
             const col2:col2 = $('#quote-summary > div.Pstart\\(12px\\) > table > tbody').map(this.getSymbolMapRows).get()[0];
-
             return this.handleResponse({ updated: Date.now(), ...this.parseCol1(col1), ...this.parseCol2(col2) }, currency);
-
         }
         catch(err) {
             return this.handleError(err);
         }
+    }
+
+    private getHistoricalPricesMapRows(_, row): HistoricalPricesResponse {
+        const obj = { date: null, open: null, high: null, low: null, close: null, adjClose: null, volume: null };
+        const columns = ['date', 'open', 'high', 'low', 'close', 'adjClose', 'volume'];
+        cheerio.load(row)('td').map((index, cell: any) => {
+            cell = cheerio.load(cell);
+            const selector = columns[index];
+            switch(index) {
+                case 0:
+                    obj[selector] = new Date(cell.text()).getTime() / 1000;
+                    break;
+                default:
+                    obj[selector] = numeral(cell.text()).value();
+                    break;
+            }
+        });
+        return obj;
     }
 
     private getSymbolMapRows(_ : any, row: any) {
@@ -74,13 +96,14 @@ class YahooStockAPI {
         return json;
     }
 
-    private handleError(error: unknown) {
+    private handleError(error: unknown): ErrorResponse {
         return {
             error: true,
             message: error instanceof Error ? error.message : error,
         };
     }
-    private handleResponse(response: HistoricalPricesResponse[] | getSymbolResponse, currency: string | undefined): APIresponse {
+
+    private handleResponse(response: HistoricalPricesResponse[] | getSymbolResponse, currency: string | undefined): SuccessResponse {
         if (!response) throw new Error('Response if not provided');
         return {
             error: false,
@@ -193,11 +216,17 @@ class YahooStockAPI {
     }
 }
 
-type APIresponse = {
-    error: boolean,
-    currency: string | null | undefined,
-    response: HistoricalPricesResponse[] | getSymbolResponse,
+interface SuccessResponse {
+    error: false;
+    response: HistoricalPricesResponse[] | getSymbolResponse;
+    currency: string;
 }
+interface ErrorResponse {
+    error: true;
+    message: string | unknown;
+}
+
+type APIresponse = SuccessResponse | ErrorResponse;
 
 type col1 = {
     previousClose: number,
