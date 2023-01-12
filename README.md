@@ -51,42 +51,42 @@ yahoo.getHistoricalPrices({ startDate, endDate, symbol: 'AAPL', frequency: '1d' 
   {
   error: false,
   currency: 'USD',
-  data: [
+  response: [
     {
-      date: 1598448600,
-      open: 504.7200012207031,
-      high: 507.9700012207031,
-      low: 500.3299865722656,
-      close: 506.0899963378906,
-      volume: 40617600,
-      adjclose: 506.0899963378906
+      date: 1598418000,
+      open: 126.18,
+      high: 126.99,
+      low: 125.08,
+      close: 126.52,
+      adjClose: 124.81,
+      volume: 163022400
     },
     {
-      date: 1598362200,
-      open: 498.7900085449219,
-      high: 500.7200012207031,
-      low: 492.2099914550781,
-      close: 499.29998779296875,
-      volume: 52873900,
-      adjclose: 499.29998779296875
+      date: 1598331600,
+      open: 124.7,
+      high: 125.18,
+      low: 123.05,
+      close: 124.82,
+      adjClose: 123.13,
+      volume: 211495600
     },
     {
-      date: 1598275800,
-      open: 514.7899780273438,
-      high: 515.1400146484375,
-      low: 495.75,
-      close: 503.42999267578125,
-      volume: 86484400,
-      adjclose: 503.42999267578125
+      date: 1598245200,
+      open: 128.7,
+      high: 128.79,
+      low: 123.94,
+      close: 125.86,
+      adjClose: 124.15,
+      volume: 345937600
     },
     {
-      date: 1598016600,
-      open: 477.04998779296875,
-      high: 499.4700012207031,
-      low: 477,
-      close: 497.4800109863281,
-      volume: 84513700,
-      adjclose: 497.4800109863281
+      date: 1597986000,
+      open: 119.26,
+      high: 124.87,
+      low: 119.25,
+      close: 124.37,
+      adjClose: 122.68,
+      volume: 338054800
     }
   ]
 }
@@ -117,26 +117,26 @@ yahoo.getSymbol({ symbol: 'AAPL' }).then(console.log);
   error: false,
   currency: 'USD',
   response: {
-    updated: 1664829357507,
-    previousClose: 138.2,
-    open: 138.21,
-    bid: { value: 142.42, shares: 1100 },
-    ask: { value: 142.44, shares: 1300 },
-    dayRange: { low: 137.68, high: 143.07 },
-    fiftyTwoWeekRange: { low: 129.04, high: 182.94 },
-    volume: 113578851,
-    avgVolume: 78897638,
-    marketCap: 2289000000000,
-    beta: 1.23, 
-    peRatio: 23.55,
-    eps: 6.05,
-    earningsDate: { start: 1666760400, end: 1667192400 },
+    updated: 1673486286910,
+    previousClose: 130.73,
+    open: 131.25,
+    bid: { value: 133.42, shares: 900 },
+    ask: { value: 133.47, shares: 1000 },
+    dayRange: { low: 130.46, high: 133.49 },
+    fiftyTwoWeekRange: { low: 124.17, high: 179.61 },
+    volume: 69458949,
+    avgVolume: 83633004,
+    marketCap: 2124000000000,
+    beta: 1.27,
+    peRatio: 21.85,
+    eps: 6.11,
+    earningsDate: { start: 1675317600, end: undefined },
     forwardDividend: 0.92,
-    forwardYield: 0.67,
-    exDividendDate: 1659675600,
-    oneYearTargetEst: 183.5
-    }
- }
+    forwardYield: 0.71,
+    exDividendDate: 1667538000,
+    oneYearTargetEst: 173.25
+  }
+}
 ```
 </details>
 
