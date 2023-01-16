@@ -15,7 +15,7 @@ class YahooStockAPI {
     public getTidyName(dirtyName: string): string {
         const name: string | undefined = dirtyName;
         const regex = /^[^(]*/;
-        return regex.exec(name)[0].substring(0, name.length - 2);
+        return regex.exec(name)[0].trim();
     }
 
     public async getHistoricalPrices({ startDate, endDate, symbol, frequency }: HistoricalPricesOptions): Promise<APIresponse> {
