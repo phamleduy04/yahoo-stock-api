@@ -155,11 +155,14 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
 <table>
-  <tr>
-    <td align="center"><a href="https://github.com/phamleduy04"><img src="https://avatars2.githubusercontent.com/u/32657584?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Duy Pham Le</b></sub></a><br /><a href="https://github.com/phamleduy04/yahoo-stock-api/commits?author=phamleduy04" title="Code">💻</a></td>
-    <td align="center"><a href="http://altitudequest.com"><img src="https://avatars3.githubusercontent.com/u/18537842?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Rajat</b></sub></a><br /><a href="#ideas-rajataudichya" title="Ideas, Planning, & Feedback">🤔</a></td>
-    <td align="center"><a href="https://github.com/twhtanghk"><img src="https://avatars1.githubusercontent.com/u/1798269?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Tommy Tang</b></sub></a><br /><a href="https://github.com/phamleduy04/yahoo-stock-api/commits?author=twhtanghk" title="Code">💻</a> <a href="https://github.com/phamleduy04/yahoo-stock-api/issues?q=author%3Atwhtanghk" title="Bug reports">🐛</a></td>
-  </tr>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/phamleduy04"><img src="https://avatars2.githubusercontent.com/u/32657584?v=4?s=100" width="100px;" alt="Duy Pham Le"/><br /><sub><b>Duy Pham Le</b></sub></a><br /><a href="https://github.com/phamleduy04/yahoo-stock-api/commits?author=phamleduy04" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://altitudequest.com"><img src="https://avatars3.githubusercontent.com/u/18537842?v=4?s=100" width="100px;" alt="Rajat"/><br /><sub><b>Rajat</b></sub></a><br /><a href="#ideas-rajataudichya" title="Ideas, Planning, & Feedback">🤔</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/twhtanghk"><img src="https://avatars1.githubusercontent.com/u/1798269?v=4?s=100" width="100px;" alt="Tommy Tang"/><br /><sub><b>Tommy Tang</b></sub></a><br /><a href="https://github.com/phamleduy04/yahoo-stock-api/commits?author=twhtanghk" title="Code">💻</a> <a href="https://github.com/phamleduy04/yahoo-stock-api/issues?q=author%3Atwhtanghk" title="Bug reports">🐛</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://shykeiichi.com"><img src="https://avatars.githubusercontent.com/u/60363370?v=4?s=100" width="100px;" alt="keiichi"/><br /><sub><b>keiichi</b></sub></a><br /><a href="https://github.com/phamleduy04/yahoo-stock-api/commits?author=shykeiichi" title="Code">💻</a></td>
+    </tr>
+  </tbody>
 </table>
 
 <!-- markdownlint-restore -->
