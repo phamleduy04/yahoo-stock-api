@@ -60,7 +60,7 @@ class YahooStockAPI {
             const responseBody = await request.body.text();
             const $ = cheerio.load(responseBody);
             let currency: string | undefined = $('#quote-header-info > div:nth-child(2) > div > div > span').text();
-            let name: string = this.getTidyName($('h1').text());
+            const name: string = this.getTidyName($('h1').text());
             currency = currency ? currency.split('.')[1].replace('Currency in', '').trim() : undefined;
             // @ts-ignore
             const col1:col1 = $('#quote-summary > div.Pend\\(12px\\) > table > tbody').map(this.getSymbolMapRows).get()[0];
