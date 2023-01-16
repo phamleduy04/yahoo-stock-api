@@ -13,7 +13,7 @@ class YahooStockAPI {
     private requestPool = new Pool('https://finance.yahoo.com');
 
     public getTidyName(dirtyName: string): string {
-        let name: string | undefined = dirtyName;
+        const name: string | undefined = dirtyName;
         const regex = /^[^(]*/;
         return regex.exec(name)[0].substring(0, name.length - 2);
     }
@@ -36,7 +36,7 @@ class YahooStockAPI {
             if ($('title').text() == 'Requested symbol wasn\'t found') throw new Error('Symbol not found!');
             let currency: string | undefined = $('#quote-header-info > div:nth-child(2) > div > div > span').text();
             currency = currency ? currency.split('.')[1].replace('Currency in', '').trim() : undefined;
-            let name: string = this.getTidyName($('h1').text());
+            const name: string = this.getTidyName($('h1').text());
             const response = $('#Col1-1-HistoricalDataTable-Proxy > section > div:nth-child(2) > table > tbody > tr').map(this.getHistoricalPricesMapRows).get();
             return {
                 error: false,
