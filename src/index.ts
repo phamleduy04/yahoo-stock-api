@@ -189,22 +189,22 @@ class YahooStockAPI {
                 case 4: {
                     const [start, end] = v.toString().split('-').map((val: string) => dateToUnix(val.trim()));
                     // @ts-ignore
-                    json[k]['start'] = start;
+                    json[k]['start'] = start || null;
                     // @ts-ignore
-                    json[k]['end'] = end;
+                    json[k]['end'] = end || null;
                     break;
                 }
                 case 5: {
                     const [fdividend, fyield] = v.toString().split(' ').map((val: string) => numeral(val.trim().replace('(', '').replace(')', '').replace('%', '')).value());
                     // @ts-ignore
-                    json.forwardDividend = fdividend;
+                    json.forwardDividend = fdividend || null;
                     // @ts-ignore
                     json.forwardYield = fyield;
                     break;
                 }
                 case 6:
                     // @ts-ignore
-                    json[k] = dateToUnix(v);
+                    json[k] = !v ? null : dateToUnix(v);
                     break;
                 default:
                     // @ts-ignore
