@@ -30,10 +30,14 @@ class YahooStockAPI {
             if ($('title').text() == 'Requested symbol wasn\'t found') throw new Error('Symbol not found!');
             let currency: string | undefined = $('#quote-header-info > div:nth-child(2) > div > div > span').text();
             currency = currency ? currency.split('.')[1].replace('Currency in', '').trim() : undefined;
+            let name: string | undefined = $('h1').text();
+            const regex = /^[^(]*/;
+            name = regex.exec(name)[0].substring(0, name.length - 2);
             const response = $('#Col1-1-HistoricalDataTable-Proxy > section > div:nth-child(2) > table > tbody > tr').map(this.getHistoricalPricesMapRows).get();
             return {
                 error: false,
                 currency: currency || undefined,
+                name: name || undefined,
                 response,
             };
         }
@@ -52,12 +56,15 @@ class YahooStockAPI {
             const responseBody = await request.body.text();
             const $ = cheerio.load(responseBody);
             let currency: string | undefined = $('#quote-header-info > div:nth-child(2) > div > div > span').text();
+            let name: string | undefined = $('h1').text();
+            const regex = /^[^(]*/;
+            name = regex.exec(name)[0].substring(0, name.length - 2);
             currency = currency ? currency.split('.')[1].replace('Currency in', '').trim() : undefined;
             // @ts-ignore
             const col1:col1 = $('#quote-summary > div.Pend\\(12px\\) > table > tbody').map(this.getSymbolMapRows).get()[0];
             // @ts-ignore
             const col2:col2 = $('#quote-summary > div.Pstart\\(12px\\) > table > tbody').map(this.getSymbolMapRows).get()[0];
-            return this.handleResponse({ updated: Date.now(), ...this.parseCol1(col1), ...this.parseCol2(col2) }, currency);
+            return this.handleResponse({ updated: Date.now(), ...this.parseCol1(col1), ...this.parseCol2(col2) }, currency, name);
         }
         catch(err) {
             return this.handleError(err);
@@ -103,11 +110,12 @@ class YahooStockAPI {
         };
     }
 
-    private handleResponse(response: HistoricalPricesResponse[] | getSymbolResponse, currency: string | undefined): SuccessResponse {
+    private handleResponse(response: HistoricalPricesResponse[] | getSymbolResponse, currency: string | undefined, name: string | undefined): SuccessResponse {
         if (!response) throw new Error('Response if not provided');
         return {
             error: false,
             currency: currency || undefined,
+            name: name || undefined,
             response,
         };
     }
@@ -220,6 +228,7 @@ interface SuccessResponse {
     error: false;
     response: HistoricalPricesResponse[] | getSymbolResponse;
     currency: string;
+    name: string;
 }
 interface ErrorResponse {
     error: true;
