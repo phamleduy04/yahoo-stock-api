@@ -37,6 +37,15 @@
         "code",
         "bug"
       ]
+    },
+    {
+      "login": "shykeiichi",
+      "name": "keiichi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/60363370?v=4",
+      "profile": "http://shykeiichi.com",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
