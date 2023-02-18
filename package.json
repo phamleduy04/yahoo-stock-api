@@ -1,6 +1,6 @@
 {
   "name": "yahoo-stock-api",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "Simple package to get stock price from yahoo finance",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -21,23 +21,23 @@
   },
   "homepage": "https://github.com/phamleduy04/yahoo-stock-api#readme",
   "devDependencies": {
-    "@types/node": "^18.11.18",
+    "@types/node": "^18.14.0",
     "@types/numeral": "^2.0.2",
-    "@typescript-eslint/eslint-plugin": "^5.48.1",
-    "@typescript-eslint/parser": "^5.48.1",
-    "eslint": "^8.31.0",
+    "@typescript-eslint/eslint-plugin": "^5.52.0",
+    "@typescript-eslint/parser": "^5.52.0",
+    "eslint": "^8.34.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "prettier": "^2.8.2",
+    "prettier": "^2.8.4",
     "ts-node": "^10.9.1",
-    "tslib": "^2.4.1",
-    "typescript": "^4.9.4"
+    "tslib": "^2.5.0",
+    "typescript": "^4.9.5"
   },
   "dependencies": {
     "camelcase": "6.3.0",
     "cheerio": "1.0.0-rc.12",
     "numeral": "^2.0.6",
-    "undici": "^5.15.0"
+    "undici": "^5.20.0"
   },
   "files": [
     "dist"
