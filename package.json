@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/phamleduy04/yahoo-stock-api#readme",
   "devDependencies": {
-    "@types/node": "^18.14.0",
+    "@types/node": "^20.4.5",
     "@types/numeral": "^2.0.2",
     "@typescript-eslint/eslint-plugin": "^5.52.0",
     "@typescript-eslint/parser": "^5.52.0",
