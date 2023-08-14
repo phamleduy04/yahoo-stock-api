@@ -1,6 +1,6 @@
 {
   "name": "yahoo-stock-api",
-  "version": "2.1.2",
+  "version": "2.2.0",
   "description": "Simple package to get stock price from yahoo finance",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
