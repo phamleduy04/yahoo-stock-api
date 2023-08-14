@@ -38,11 +38,16 @@ class YahooStockAPI {
             currency = currency ? currency.split('.')[1].replace('Currency in', '').trim() : undefined;
             const name: string = this.getTidyName($('h1').text());
             const response = $('#Col1-1-HistoricalDataTable-Proxy > section > div:nth-child(2) > table > tbody > tr').map(this.getHistoricalPricesMapRows).get();
+            // filter out null values (dividend pays)
+            const columns = ['date', 'open', 'high', 'low', 'close', 'adjClose', 'volume'];
+            const filteredResponse = response.filter((obj) => {
+                return !columns.some((column) => obj[column] == null);
+            });
             return {
                 error: false,
                 currency: currency || undefined,
                 name: name || undefined,
-                response,
+                response: filteredResponse,
             };
         }
         catch(err) {
