@@ -38,11 +38,16 @@ class YahooStockAPI {
             currency = currency ? currency.split('.')[1].replace('Currency in', '').trim() : undefined;
             const name: string = this.getTidyName($('h1').text());
             const response = $('#Col1-1-HistoricalDataTable-Proxy > section > div:nth-child(2) > table > tbody > tr').map(this.getHistoricalPricesMapRows).get();
+            // filter out null values (dividend pays)
+            const columns = ['date', 'open', 'high', 'low', 'close', 'adjClose', 'volume'];
+            const filteredResponse = response.filter((obj) => {
+                return !columns.some((column) => obj[column] == null);
+            });
             return {
                 error: false,
                 currency: currency || undefined,
                 name: name || undefined,
-                response,
+                response: filteredResponse,
             };
         }
         catch(err) {
@@ -76,18 +81,19 @@ class YahooStockAPI {
     private getHistoricalPricesMapRows(_, row): HistoricalPricesResponse {
         const obj = { date: null, open: null, high: null, low: null, close: null, adjClose: null, volume: null };
         const columns = ['date', 'open', 'high', 'low', 'close', 'adjClose', 'volume'];
-        cheerio.load(row)('td').map((index, cell: any) => {
-            cell = cheerio.load(cell);
+        const $row = cheerio.load(row);
+
+        $row('td').each((index, cell: any) => {
+            const text = $row(cell).text();
             const selector = columns[index];
-            switch(index) {
-                case 0:
-                    obj[selector] = new Date(cell.text()).getTime() / 1000;
-                    break;
-                default:
-                    obj[selector] = numeral(cell.text()).value();
-                    break;
+
+            if (index === 0) {
+                obj[selector] = new Date(`${text} 00:00:00 +0000`).getTime() / 1000;
+            } else {
+                obj[selector] = numeral(text).value();
             }
         });
+
         return obj;
     }
 
